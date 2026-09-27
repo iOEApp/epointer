@@ -5,44 +5,31 @@
 
 # Website name (set in params.yaml under hugoblox.branding.name)
 title: ''
-baseURL: 'https://example.com/' # Website URL
+# Website URL.
+# Hugo needs an absolute baseURL for sitemap.xml, RSS and the absolute
+# canonical / og: / hreflang tags — but this value is NOT baked in permanently.
+# Override it per environment without editing this file:
+#   hugo --minify -b https://some-other-domain.com/
+#   HUGO_BASEURL=https://some-other-domain.com/ hugo --minify
+#   hugo --environment staging          (see config/<env>/hugo.yaml)
+# Runtime navigation does not depend on it: the "/" language gateway is built
+# with relURL, so it works on whatever host serves the build.
+baseURL: 'https://epointer.oeapp.com/'
 
 ############################
 ## PAGE OPTIONS
 ############################
 
-cascade:
-  # Blog post options
-  - target:
-      path: /blog/**
-      kind: page
-    pager: true
-    editable: true
-    show_date: true
-    show_date_updated: true
-    reading_time: true
-    commentable: true
-    show_related: true
-    share: true
-    # Just use Breadcrumb for navigation on blog post pages?
-    show_breadcrumb: false
-    header:
-      navbar:
-        enable: true
-  # Blog section options
-  - target:
-      path: /blog/*
-      kind: section
-    # Set the listing view
-    view: date-title-summary
+cascade: {}
 
 ############################
 ## LANGUAGE
 ############################
 
 defaultContentLanguage: en
-hasCJKLanguage: false
-defaultContentLanguageInSubdir: false
+hasCJKLanguage: true
+# English lives at /en/ too, so "/" is free for the browser-language gateway page.
+defaultContentLanguageInSubdir: true
 removePathAccents: true
 
 ############################
@@ -65,9 +52,15 @@ outputs:
   section: [HTML, RSS]
 imaging:
   resampleFilter: lanczos
-  quality: 90
   anchor: smart
-  hint: picture
+  jpeg:
+    quality: 90
+  webp:
+    quality: 90
+    hint: picture
+  avif:
+    quality: 90
+    hint: picture
 timeout: 600000
 taxonomies:
   tag: tags
@@ -79,5 +72,15 @@ markup:
     lineNos: false
 security:
   _merge: deep
+  exec:
+    # Tailwind is driven through the npm `@tailwindcss/cli` package; Hugo's default
+    # policy only whitelists up to `postcss`, so `tailwindcss` must be added here.
+    allow:
+      - '^(dart-)?sass$'
+      - '^go$'
+      - '^git$'
+      - '^node$'
+      - '^postcss$'
+      - '^tailwindcss$'
 sitemap:
   _merge: deep

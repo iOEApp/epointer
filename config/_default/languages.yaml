@@ -2,21 +2,214 @@
 #   Create a section for each of your site's languages.
 #   Documentation: https://docs.hugoblox.com/reference/language/
 
-# Default language
+# ── Default language ────────────────────────────────────────────────────────
 en:
   locale: en-us
-  # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
-  #contentDir: content/en
+  label: English
+  title: 'ePointer'
+  weight: 1
+  contentDir: content/en
+  params:
+    hugoblox:
+      identity:
+        name: 'ePointer'
+        description: 'ePointer is a simple yet powerful virtual annotation tool. Draw,
+          doodle and annotate freely on top of any app — for teaching, meetings,
+          online classes and stock chart analysis.'
+      footer:
+        text: 'Draw and annotate on any screen.'
+  menu:
+    main:
+      - name: Overview
+        url: /en/#introduce
+        weight: 10
+      - name: Screenshots
+        url: /en/#screenshots
+        weight: 20
+      - name: Features
+        url: /en/#features
+        weight: 30
+      - name: Details
+        url: /en/#details
+        weight: 40
+      - name: Versions
+        url: /en/#versions
+        weight: 50
+      - name: Contact
+        url: /en/#contact
+        weight: 60
+    footer:
+      - name: Product
+        weight: 10
+      - parent: Product
+        name: Overview
+        url: /en/#introduce
+        weight: 10
+      - parent: Product
+        name: Features
+        url: /en/#features
+        weight: 20
+      - parent: Product
+        name: Details
+        url: /en/#details
+        weight: 30
+      - parent: Product
+        name: Versions
+        url: /en/#versions
+        weight: 40
+      - name: Support
+        weight: 20
+      - parent: Support
+        name: Contact us
+        url: mailto:oeapp@outlook.com
+        weight: 10
+      - name: Legal
+        weight: 30
+      - parent: Legal
+        name: Privacy Policy
+        url: /en/privacy/
+        weight: 10
+      - parent: Legal
+        name: Terms of Service
+        url: /en/terms/
+        weight: 20
 
-# Uncomment the lines below to configure your website in a second language.
-#zh:
-#  locale: zh-Hans
-#  contentDir: content/zh
-#  title: Chinese website title...
-#  params:
-#    description: Site description in Chinese...
-#  menu:
-#    main:
-#      - name: 传
-#        url: '#about'
-#        weight: 1
+# ── Simplified Chinese ──────────────────────────────────────────────────────
+zh-hans:
+  locale: zh-Hans
+  label: 简体中文
+  title: '屏幕电子教鞭 ePointer'
+  weight: 2
+  contentDir: content/zh-hans
+  params:
+    hugoblox:
+      identity:
+        name: '屏幕电子教鞭 ePointer'
+        description: '屏幕电子教鞭是一款简单强大的虚拟标注工具，支持在任意软件上自由画图、涂鸦与注释，广泛用于教学标注、远程会议、在线教育演示与股市行情分析。'
+      footer:
+        text: '在任意软件界面上自由画图和标注。'
+  menu:
+    main:
+      - name: 软件简介
+        url: /zh-hans/#introduce
+        weight: 10
+      - name: 屏幕截图
+        url: /zh-hans/#screenshots
+        weight: 20
+      - name: 主要功能
+        url: /zh-hans/#features
+        weight: 30
+      - name: 功能详解
+        url: /zh-hans/#details
+        weight: 40
+      - name: 版本区别
+        url: /zh-hans/#versions
+        weight: 50
+      - name: 联系我们
+        url: /zh-hans/#contact
+        weight: 60
+    footer:
+      - name: 产品
+        weight: 10
+      - parent: 产品
+        name: 软件简介
+        url: /zh-hans/#introduce
+        weight: 10
+      - parent: 产品
+        name: 主要功能
+        url: /zh-hans/#features
+        weight: 20
+      - parent: 产品
+        name: 功能详解
+        url: /zh-hans/#details
+        weight: 30
+      - parent: 产品
+        name: 版本区别
+        url: /zh-hans/#versions
+        weight: 40
+      - name: 支持
+        weight: 20
+      - parent: 支持
+        name: 联系我们
+        url: mailto:oeapp@outlook.com
+        weight: 10
+      - name: 法律
+        weight: 30
+      - parent: 法律
+        name: 隐私政策
+        url: /zh-hans/privacy/
+        weight: 10
+      - parent: 法律
+        name: 服务条款
+        url: /zh-hans/terms/
+        weight: 20
+
+# ── Traditional Chinese ─────────────────────────────────────────────────────
+zh-hant:
+  locale: zh-Hant
+  label: 繁體中文
+  title: '屏幕電子教鞭 ePointer'
+  weight: 3
+  contentDir: content/zh-hant
+  params:
+    hugoblox:
+      identity:
+        name: '屏幕電子教鞭 ePointer'
+        description: '屏幕電子教鞭是一款簡單強大的虛擬標註工具，支持在任意軟件上自由畫圖、塗鴉與註釋，廣泛用於教學標註、遠程會議、在線教育演示與股市行情分析。'
+      footer:
+        text: '在任意軟件界面上自由畫圖和標註。'
+  menu:
+    main:
+      - name: 軟件簡介
+        url: /zh-hant/#introduce
+        weight: 10
+      - name: 屏幕截圖
+        url: /zh-hant/#screenshots
+        weight: 20
+      - name: 主要功能
+        url: /zh-hant/#features
+        weight: 30
+      - name: 功能詳解
+        url: /zh-hant/#details
+        weight: 40
+      - name: 版本區別
+        url: /zh-hant/#versions
+        weight: 50
+      - name: 聯繫我們
+        url: /zh-hant/#contact
+        weight: 60
+    footer:
+      - name: 產品
+        weight: 10
+      - parent: 產品
+        name: 軟件簡介
+        url: /zh-hant/#introduce
+        weight: 10
+      - parent: 產品
+        name: 主要功能
+        url: /zh-hant/#features
+        weight: 20
+      - parent: 產品
+        name: 功能詳解
+        url: /zh-hant/#details
+        weight: 30
+      - parent: 產品
+        name: 版本區別
+        url: /zh-hant/#versions
+        weight: 40
+      - name: 支持
+        weight: 20
+      - parent: 支持
+        name: 聯繫我們
+        url: mailto:oeapp@outlook.com
+        weight: 10
+      - name: 法律
+        weight: 30
+      - parent: 法律
+        name: 隱私政策
+        url: /zh-hant/privacy/
+        weight: 10
+      - parent: 法律
+        name: 服務條款
+        url: /zh-hant/terms/
+        weight: 20

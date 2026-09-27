@@ -1,0 +1,171 @@
+{{/*
+  Root language gateway.
+
+  With `defaultContentLanguageInSubdir: true`, Hugo emits a redirect at `/`
+  pointing at the default language (`/en/`) — and it reuses the alias template
+  to do so. We take that template over so `/` becomes a real page that sniffs
+  the visitor's browser language and forwards them to /en/, /zh-hans/ or
+  /zh-hant/.
+
+  - JavaScript available  → detect navigator.languages, honour a previously
+                            saved choice, then redirect immediately.
+  - JavaScript disabled   → the <noscript> meta refresh still lands the visitor
+                            on the default language home page.
+
+  Any other alias (a renamed page, say) keeps Hugo's plain redirect markup.
+
+  Note on URLs: the *navigation* targets below (noscript refresh, the language
+  links and the JS redirect map) are built with `relURL`, so they carry only a
+  path — no host. That keeps this gateway working on whatever domain ends up
+  serving the build, even if baseURL was set to something else. Absolute URLs
+  are kept only where the specs require them (canonical / hreflang), which is
+  also why those should be built with the canonical domain as baseURL.
+*/}}
+
+{{- $target := .Permalink -}}
+{{- $home := relURL (printf "%s/" .Language.Lang) -}}
+{{- $is_language_root := or (hasSuffix $target "/en/") (hasSuffix $target "/zh-hans/") (hasSuffix $target "/zh-hant/") -}}
+
+{{ if $is_language_root }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ePointer · 屏幕电子教鞭 · 屏幕電子教鞭</title>
+<meta name="description" content="ePointer — draw and annotate freely on any screen. 屏幕电子教鞭：在任意软件界面上自由画图和标注。">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon32.png">
+<link rel="apple-touch-icon" href="/img/appicon_epointer.png">
+<link rel="canonical" href="{{ $target }}">
+<link rel="alternate" hreflang="en" href="{{ absURL "en/" }}">
+<link rel="alternate" hreflang="zh-Hans" href="{{ absURL "zh-hans/" }}">
+<link rel="alternate" hreflang="zh-Hant" href="{{ absURL "zh-hant/" }}">
+<link rel="alternate" hreflang="x-default" href="{{ absURL "en/" }}">
+<noscript><meta http-equiv="refresh" content="0; url={{ $home }}"></noscript>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    text-align: center;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: #0b1120; color: #e2e8f0; }
+    .lang { background: #1e293b; border-color: #334155; }
+    .lang:hover { background: #273449; }
+    .lang small, .note { color: #94a3b8; }
+    .tagline { color: #cbd5e1; }
+  }
+  img.icon { width: 88px; height: 88px; border-radius: 20px; }
+  h1 { margin: 0; font-size: 1.75rem; font-weight: 700; letter-spacing: .01em; }
+  .tagline { margin: 0; color: #475569; font-size: .95rem; }
+  nav.langs { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
+  .lang {
+    display: block;
+    min-width: 12rem;
+    padding: .9rem 1.1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background .15s ease, transform .15s ease;
+  }
+  .lang:hover { background: #eef2f7; transform: translateY(-1px); }
+  .lang small { display: block; margin-top: .25rem; font-weight: 400; color: #64748b; }
+  .note { font-size: .8rem; color: #94a3b8; }
+</style>
+</head>
+<body>
+  <img class="icon" src="/img/appicon_epointer.png" alt="ePointer" width="88" height="88">
+  <h1>ePointer</h1>
+  <p class="tagline">Draw and annotate freely on any screen</p>
+
+  <nav class="langs" aria-label="Choose a language">
+    <a class="lang" href="{{ relURL "en/" }}" data-lang="en">English<small>Draw and annotate on any screen</small></a>
+    <a class="lang" href="{{ relURL "zh-hans/" }}" data-lang="zh-hans">简体中文<small>在任意软件界面上自由画图和标注</small></a>
+    <a class="lang" href="{{ relURL "zh-hant/" }}" data-lang="zh-hant">繁體中文<small>在任意軟件界面上自由畫圖和標註</small></a>
+  </nav>
+
+  <p class="note">Redirecting you to your preferred language…</p>
+
+<script>
+(function () {
+  // `jsonify` emits a quoted JSON string; `safeJS` stops Go's template engine from
+  // re-escaping those quotes inside the <script> context.
+  var LANGS = {{ dict "en" (relURL "en/") "zh-hans" (relURL "zh-hans/") "zh-hant" (relURL "zh-hant/") | jsonify | safeJS }};
+  var FALLBACK = {{ $home | jsonify | safeJS }};
+  var TRADITIONAL = ["hant", "tw", "hk", "mo"];
+  var STORE_KEY = "epointer-lang";
+
+  function readSaved() {
+    try { return localStorage.getItem(STORE_KEY); } catch (e) { return null; }
+  }
+  function save(code) {
+    try { localStorage.setItem(STORE_KEY, code); } catch (e) {}
+  }
+
+  function detect() {
+    var saved = readSaved();
+    if (saved && LANGS[saved]) { return saved; }
+
+    var prefs = navigator.languages && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || navigator.userLanguage || "en"];
+
+    for (var i = 0; i < prefs.length; i++) {
+      var tag = String(prefs[i] || "").toLowerCase();
+      if (!tag) { continue; }
+      if (tag.indexOf("zh") === 0) {
+        for (var j = 0; j < TRADITIONAL.length; j++) {
+          if (tag.indexOf(TRADITIONAL[j]) !== -1) { return "zh-hant"; }
+        }
+        return "zh-hans";
+      }
+      if (tag.indexOf("en") === 0) { return "en"; }
+    }
+    return null;
+  }
+
+  var links = document.querySelectorAll("a[data-lang]");
+  for (var k = 0; k < links.length; k++) {
+    links[k].addEventListener("click", function () {
+      save(this.getAttribute("data-lang"));
+    });
+  }
+
+  var target = detect();
+  if (!target) {
+    // No usable signal (and no saved preference) — fall back to the default language.
+    window.location.replace(FALLBACK);
+    return;
+  }
+
+  document.documentElement.lang = target;
+  var active = document.querySelector('a[data-lang="' + target + '"]');
+  if (active) { active.setAttribute("data-preferred", "1"); }
+
+  // replace() keeps the gateway out of the back-button history.
+  window.location.replace(LANGS[target]);
+})();
+</script>
+</body>
+</html>
+{{ else }}
+<!DOCTYPE html><html lang="{{ .Language.Lang }}"><head><title>{{ .Permalink }}</title><link rel="canonical" href="{{ .Permalink }}"><meta name="robots" content="noindex"><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={{ .Permalink }}"></head></html>
+{{ end }}

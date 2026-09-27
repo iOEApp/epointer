@@ -13,30 +13,23 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   identity:
     # Site name - shown in navbar, footer, copyright, and browser title by default
-    name: "Beacon"
+    # (each language overrides this in config/_default/languages.yaml)
+    name: "ePointer"
     # Legal entity for copyright notices (defaults to name if not set)
-    organization: ""
+    organization: "OEApp"
     # Schema.org type for structured data
     type: organization # person | organization | local_business
     # Short tagline displayed on your site
-    tagline: "The customer feedback platform for product teams."
+    tagline: "Draw and annotate on any screen"
     # Site meta description for search engines and social sharing
-    description: "Beacon captures customer feedback from every channel — Slack,
-      email, support, in-app — and uses AI to surface what matters. Turn customer
-      noise into your roadmap."
+    description: "ePointer is a simple yet powerful virtual annotation tool. Draw,
+      doodle and annotate freely on top of any app — for teaching, meetings, online
+      classes and stock chart analysis."
     # Social accounts (used for meta tags like Twitter Cards)
     social:
-      twitter: "GoOwnable" # Twitter/X handle for Twitter Cards (without @)
+      twitter: "" # Twitter/X handle for Twitter Cards (without @)
       # Site-wide social links (rendered in footer, etc.)
-      links:
-        - icon: brands/x
-          url: https://x.com/GoOwnable
-        - icon: brands/github
-          url: https://github.com/HugoBlox/kit
-        - icon: brands/discord
-          url: https://discord.gg/z8wNYzb
-        - icon: brands/linkedin
-          url: https://linkedin.com/company/example
+      links: []
 
   # ────────────────────────────────────────────────────────────────────────────
   # THEME
@@ -97,7 +90,7 @@ hugoblox:
     # Stick to top on scroll
     sticky: true
     # Show logo in navbar
-    show_logo: false
+    show_logo: true
     # Show site title text in navbar
     show_title: true
     # Override navbar title (defaults to identity.name)
@@ -105,7 +98,7 @@ hugoblox:
     # Menu alignment
     align: center # left | center | right
     # Feature toggles
-    search: true
+    search: false
     theme_toggle: true
     theme_picker: false
     language_switcher: true
@@ -129,7 +122,7 @@ hugoblox:
     title: ""
     language_switcher: true
     # Show social icons from identity.social.links
-    show_social: true
+    show_social: false
     # Custom footer text (HTML supported)
     text: ""
 
@@ -139,7 +132,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   copyright:
     # Copyright notice - supports {year}, {name}, {license} placeholders
-    notice: "© {year} {name}."
+    notice: "© {year} OEApp"
     license:
       type: custom # cc | custom
       allow_derivatives: false
@@ -196,7 +189,8 @@ hugoblox:
   # Site search
   # ────────────────────────────────────────────────────────────────────────────
   search:
-    enable: true
+    # Disabled: this is a single-page product showcase with nothing to index.
+    enable: false
     # Trending/suggested search terms
     suggestions: []
     # Quick action shortcuts in search modal
