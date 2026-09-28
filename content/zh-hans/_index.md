@@ -17,13 +17,14 @@ sections:
       primary_action:
         text: 'Microsoft Store 下载'
         url: 'https://apps.microsoft.com/detail/9NDMS4RC84VM'
-        icon: 'hero/computer-desktop'
+        icon: 'brands/windows'
         style: gradient
       secondary_action:
         text: 'Mac App Store 下载'
         url: 'https://apps.apple.com/cn/app/id1626223968'
-        icon: 'hero/device-phone-mobile'
-        style: outline
+        icon: 'brands/apple'
+        # 纯色填充：与 Microsoft Store 的渐变按钮同属主色系，但视觉处理不同（纯色 vs 渐变）
+        style: solid
       media:
         type: image
         src: 'epointer-screenshot/epointer-screenshot-zh-hans-01.jpg'
@@ -242,11 +243,6 @@ sections:
           description: '零成本体验核心标注能力。'
           price_note: '免费'
           highlight: false
-          cta:
-            text: '免费下载'
-            url: 'https://apps.microsoft.com/detail/9NDMS4RC84VM'
-            icon: 'hero/arrow-down-tray'
-            style: outline
           features:
             - text: '部分画图工具'
               included: true

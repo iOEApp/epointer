@@ -22,6 +22,18 @@ mounts:
     target: assets/dist/community/blox/
     files:
       - '**.css'
+
+  # Project overrides for individual Hugo Blox client islands.
+  # The kit mounts its blox components to the same target; because the project
+  # module has the highest priority, any file we place under blox/ wins per-path
+  # while the untouched blocks keep coming from the kit.
+  #   blox/gallery/component.jsx  -> fixes the slideshow `sizes` hint (blurry shots)
+  #   blox/pricing/component.jsx  -> collapses the empty CTA row, aligns dividers
+  - source: blox
+    target: assets/js/hbx/blocks
+    files:
+      - '**/*.jsx'
+
   - source: layouts
     target: layouts
   - source: assets

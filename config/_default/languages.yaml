@@ -60,9 +60,13 @@ en:
       - name: Support
         weight: 20
       - parent: Support
+        name: Help documentation
+        url: /en/help/
+        weight: 10
+      - parent: Support
         name: Contact us
         url: mailto:oeapp@outlook.com
-        weight: 10
+        weight: 20
       - name: Legal
         weight: 30
       - parent: Legal
@@ -130,9 +134,13 @@ zh-hans:
       - name: 支持
         weight: 20
       - parent: 支持
+        name: 帮助文档
+        url: /zh-hans/help/
+        weight: 10
+      - parent: 支持
         name: 联系我们
         url: mailto:oeapp@outlook.com
-        weight: 10
+        weight: 20
       - name: 法律
         weight: 30
       - parent: 法律
@@ -200,9 +208,13 @@ zh-hant:
       - name: 支持
         weight: 20
       - parent: 支持
+        name: 幫助文檔
+        url: /zh-hant/help/
+        weight: 10
+      - parent: 支持
         name: 聯繫我們
         url: mailto:oeapp@outlook.com
-        weight: 10
+        weight: 20
       - name: 法律
         weight: 30
       - parent: 法律

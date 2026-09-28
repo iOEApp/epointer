@@ -23,13 +23,15 @@ sections:
       primary_action:
         text: 'Download on Microsoft Store'
         url: 'https://apps.microsoft.com/detail/9NDMS4RC84VM'
-        icon: 'hero/computer-desktop'
+        icon: 'brands/windows'
         style: gradient
       secondary_action:
         text: 'Download on Mac App Store'
         url: 'https://apps.apple.com/us/app/id1626223968'
-        icon: 'hero/device-phone-mobile'
-        style: outline
+        icon: 'brands/apple'
+        # Flat brand fill: same primary family as the gradient Microsoft button,
+        # but clearly a different treatment (solid vs gradient).
+        style: solid
       media:
         type: image
         src: 'epointer-screenshot/epointer_screenshot_en_01.jpg'
@@ -248,11 +250,6 @@ sections:
           description: 'Try the core annotation experience at no cost.'
           price_note: 'Free'
           highlight: false
-          cta:
-            text: 'Download free'
-            url: 'https://apps.microsoft.com/detail/9NDMS4RC84VM'
-            icon: 'hero/arrow-down-tray'
-            style: outline
           features:
             - text: 'Partial drawing tools'
               included: true

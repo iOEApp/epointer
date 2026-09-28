@@ -17,13 +17,14 @@ sections:
       primary_action:
         text: 'Microsoft Store 下載'
         url: 'https://apps.microsoft.com/detail/9NDMS4RC84VM'
-        icon: 'hero/computer-desktop'
+        icon: 'brands/windows'
         style: gradient
       secondary_action:
         text: 'Mac App Store 下載'
         url: 'https://apps.apple.com/cn/app/id1626223968'
-        icon: 'hero/device-phone-mobile'
-        style: outline
+        icon: 'brands/apple'
+        # 純色填充：與 Microsoft Store 的漸變按鈕同屬主色系，但視覺處理不同（純色 vs 漸變）
+        style: solid
       media:
         type: image
         src: 'epointer-screenshot/epointer-screenshot-zh-hant-01.jpg'
@@ -242,11 +243,6 @@ sections:
           description: '零成本體驗核心標註能力。'
           price_note: '免費'
           highlight: false
-          cta:
-            text: '免費下載'
-            url: 'https://apps.microsoft.com/detail/9NDMS4RC84VM'
-            icon: 'hero/arrow-down-tray'
-            style: outline
           features:
             - text: '部分畫圖工具'
               included: true
