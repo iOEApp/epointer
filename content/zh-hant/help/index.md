@@ -8,4 +8,9 @@ reading_time: false
 description: '屏幕電子教鞭的使用說明與常見問題。'
 ---
 
-你好，世界
+## 荧幕電子教鞭 ePointer 幫助文檔
+
++ [荧幕電子教鞭 幫助小貼士](epointer-tips.md)
++ [荧幕電子教鞭 分頁器使用幫助](epointer-paginator.md)
++ [荧幕電子教鞭 畫筆預設幫助](epointer-brush-presets.md)
++ [荧幕電子教鞭 圖標助手程式使用幫助](epointer-assistant.md)
