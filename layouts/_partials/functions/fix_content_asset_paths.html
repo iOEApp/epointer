@@ -1,0 +1,19 @@
+{{/*
+  把渲染后内容里「手写的原始 HTML」中的相对资源路径（assets/...）重写为站点绝对路径。
+
+  背景：Markdown 图片语法会经过 render-image 钩子（见 layouts/_markup/render-image.html），
+  但内容里直接写的 <img src="assets/x.png"> 属于原始 HTML，Hugo 的渲染钩子不处理它，
+  浏览器会按「页面 URL」去解析（页面 URL 是目录形 /<lang>/help/<slug>/），于是 404。
+  这里统一按「源 md 文件所在目录」重写，和 Markdown 编辑器的直觉保持一致。
+
+  调用：{{ partial "functions/fix_content_asset_paths.html" (dict "page" . "content" .Content) }}
+  说明：../assets/... 这类写法本身已经相对正确，正则要求紧跟引号，不会误改。
+*/}}
+{{- $page := .page -}}
+{{- $content := .content -}}
+{{- $dir := "" -}}
+{{- with $page.File }}{{ $dir = .Dir }}{{ end -}}
+{{- $prefix := path.Join $page.Site.Home.RelPermalink (replace $dir "\\" "/") -}}
+{{- $content = $content | replaceRE `(src|href)="(assets/[^"]*)"` (printf `$1="%s/$2"` $prefix) -}}
+{{- $content = $content | replaceRE `(src|href)='(assets/[^']*)'` (printf `$1='%s/$2'` $prefix) -}}
+{{- $content | safeHTML -}}

@@ -1,10 +1,6 @@
 ---
 title: ePointer Assistant Help
 ---
-# ePointer Assistant Help
-
-Related Software: [ePointer](/en/epointer.html), [ePointer Assistant](/en/epointer-assistant.html)
-
 ## How to Add Custom Icons to the ePointer?
 
 ### Simplest Steps

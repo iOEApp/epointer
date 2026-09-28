@@ -1,8 +1,6 @@
 ---
 title: ePointer Brush Presets Help
 ---
-# ePointer Brush Presets Help
-
 Brush presets allow you to combine your frequently used drawing tools, colors, sizes and effects. You can quickly switch between them via hotkeys, eliminating tedious manual configuration on the toolbar.
 
 When editing a preset, if you set any item (brush tool, color, size, effect) to `Not Specified`, the software will automatically adopt the corresponding live parameters currently set on the toolbar.

@@ -1,0 +1,30 @@
+/*
+ * 项目自定义样式（HugoBlox 约定：assets/css/custom.css 存在时自动引入，见 kit 的 site_head.html）
+ */
+
+/* ---------------------------------------------------------------------------
+ * 正文里的「行内小图标」
+ * ---------------------------------------------------------------------------
+ * 帮助文档里从原 HTML 文档搬过来的行内图标写成：
+ *   <img src="assets/xx.png" style="zoom:50%">  （直接写在句子里）
+ * 它们是段落里的行内元素。但 Tailwind Typography 的 `.prose img` 规则给了
+ * 上下各 2em 的外边距 —— 对 inline-replaced 元素（img）这个外边距是生效的，
+ * 结果把一整句话拆成了好几行。
+ *
+ * 这里只针对「段落的直接子级 img」清除外边距并做垂直对齐。
+ * Markdown 图片语法会被渲染成 <figure>（见 layouts/_markup/render-image.html），
+ * 结构是 p > figure > div > div > img，不匹配下面的选择器，
+ * 因此块级截图仍然保持独立成块的排版。
+ */
+.prose p > img,
+.prose li > img {
+  display: inline-block;
+  margin: 0 0.15em;
+  vertical-align: -0.2em;
+}
+
+/* 行内图标不再被 typography 的圆角/阴影类样式干扰 */
+.prose p > img {
+  border-radius: 0;
+  box-shadow: none;
+}

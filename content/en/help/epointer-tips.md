@@ -1,30 +1,22 @@
 ---
-title: Screen Electronic Pointer (ePointer) Help
+title: ePointer Usage Tips
 ---
-# ePointer Help
-
 Usage instructions for each drawing tool or feature can be accessed by clicking the question mark button next to each tool in the ePointer's [Preferences - Shortcut Key Settings]. This section only covers some important or easily overlooked tips for using the ePointer.
 
-## Help Link Navigation
-
-1. [ePointer Paginator Help](epointer-paginator.html)
-2. [ePointer Icon Assistant Help](epointer-assistant.html)
-3. [ePointer Brush Presets Help](epointer-brush-presets.html)
-
-## Some Easily Overlooked Tips
+## ePointer Usage Tips
 
 1. **Hiding and Collapsing the Toolbox:** The ePointer interface has only one toolbox. When you drag the toolbox to the left, top, or right edge of the screen, it will automatically hide into the screen edge. Moving the mouse over the edge where the toolbox is located will redisplay it.
 2. **Tool buttons with a black triangle ◢ in the bottom-right corner:** This indicates that the button has a dropdown menu. There are generally 3 ways to open the dropdown menu of a tool:
    + Click the black triangle ◢ area to pop up the menu
-   + Long-press the button to pop up the menu (not applicable to effect buttons on macOS)
-   + Right-click the button to pop up the menu (not applicable to effect buttons on Windows)
+   + Long-press the button to pop up the menu (not applicable to effect buttons on macOS[^macOS])
+   + Right-click the button to pop up the menu (not applicable to effect buttons on Windows[^win])
 3. **Exclusive activation of effect buttons:** Graphic effect buttons include Shadow <img src="assets/f08c.png" alt="Screenshot of BlueLight." style="zoom:60%;" />[^win]<img src="assets/shadow-mac@2x.png" alt="shadow-mac@2x" style="zoom:50%;" />[^macOS], Stroke <img src="assets/ee56.png" alt="Screenshot of PenPalette." style="zoom:50%;" />[^win]<img src="assets/stroke-mac@2x.png" alt="stroke-mac@2x" style="zoom:50%;" />[^macOS], Dashed Line <img src="assets/ef20.png" alt="Screenshot of Marquee." style="zoom: 50%;" />[^win]<img src="assets/dashed-line-mac@2x.png" alt="dashed-line-mac@2x" style="zoom:50%;" />[^macOS], and Semi-Transparent <img src="assets/f0e7.png" alt="Screenshot of OutlineHalfStarLeft." style="zoom:50%;" />[^win]<img src="assets/transparent-mac@2x.png" alt="transparent-mac@2x" style="zoom:50%;" />[^macOS] effects. To quickly disable other active effects and exclusively enable one of them, you can:
    + On Windows, right-click the effect button you want to exclusively enable.
    + On macOS, long-press the effect button you want to exclusively enable.
 4. **Drawing with `Shift`:** Most drawing tools support `Shift` drawing. For line tools, holding `Shift` while drawing allows you to draw horizontal or vertical lines. For rectangles, ellipses, etc., it allows you to draw squares or circles.
 5. **Quick switching between sub-tools of a drawing tool:** For drawing tools with multiple sub-tools, such as `Single Arrow Line` <img src="assets/e8ad.png" alt="Screenshot of Go." style="zoom:50%;" /> and `Double Arrow Line` <img src="assets/e740.png" alt="Screenshot of FullScreen." style="zoom:50%;" />, these two tools are integrated into the same drawing tool button due to their similar shapes. After activating the button, to quickly switch between these two tools, simply press the `Tab` key back and forth.
 6. **Quickly deleting all spotlights:** After drawing multiple spotlights <img src="assets/f16d.png" alt="Screenshot of CheckboxIndeterminateCombo14." style="zoom:50%;" /><img src="assets/eccb.png" alt="Screenshot of RadioBtnOn." style="zoom:50%;" />[^win]<img src="assets/rectangle_spotlight-mac@2x.png" alt="rectangle_spotlight-mac@2x" style="zoom:50%;" /><img src="assets/ellipse_spotlight-mac@2x.png" alt="ellipse_spotlight-mac@2x" style="zoom:50%;" />[^macOS], to delete all spotlights at once, simply use the eraser to click on the shaded area between the spotlights.
-7. **Using the Text <img src="assets/e97e.png" alt="Screenshot of HalfAlpha." style="zoom:50%;" /> tool:**
+7. **Using the Text tool:**<img src="assets/e97e.png" alt="Screenshot of HalfAlpha." style="zoom:50%;" />
    + On Windows, when entering text, you can use `Shift+Enter` for line breaks within the text, press `Enter` to finish text input, and press `Esc` to cancel text drawing; switch to the selection tool and double-click the text to re-edit it.
    + On macOS, you can use the `Return` key for line breaks and press `Esc` to finish text drawing; switch to the selection tool and double-click the text to re-edit it.
 8. **Full-screen and area screenshot:** The screenshot <img src="assets/e722.png" alt="Screenshot of camera." style="zoom:50%;" />[^win]<img src="assets/screenshot_crop-mac@2x.png" alt="screenshot_crop-mac@2x" style="zoom:50%;" />[^macOS] tool — click the screen for a full-screen screenshot; press and drag the mouse to draw a rectangle for an area screenshot.
@@ -35,7 +27,7 @@ Usage instructions for each drawing tool or feature can be accessed by clicking 
 11. **Temporary click-through on the canvas:**
     + **Windows:** In *Classic Mode* or *Dynamic Mode* (Frozen Mode not supported), you can **hold** the shortcut key `Ctrl+Alt` (default) to temporarily toggle the click-through function on or off. When click-through is enabled, users can interact with third-party software beneath the canvas using the mouse. Note that `Ctrl+Alt` may also be a shortcut key in that third-party software, which could cause execution conflicts. Therefore, it is recommended to use the `F5` key (default) to toggle click-through on or off (this feature can be found in the dropdown list of the <img src="assets/e768.png" alt="Screenshot of Play." style="zoom:50%;" /> Start button in the upper-right corner of the toolbar), which does not require holding a shortcut key.
     + **macOS:** Similar to the Windows version, in *Classic Mode* or *Dynamic Mode* (Frozen Mode not supported), the `Fn` key is used by default to temporarily toggle the click-through function on or off. If using a third-party keyboard without an `Fn` key or if the key cannot be detected, you can set an alternative key in [Preferences - Shortcut Key Settings - Temporary Click-Through Toggle]. Similarly, if the `Fn` key is unavailable, it is recommended to use the `F5` function instead of setting an alternative shortcut key.
-12. **Using the Paginator <img src="assets/e81e.png" alt="Screenshot of MapLayers." style="zoom:50%;" />:**
+12. **Using the Paginator:**<img src="assets/e81e.png" alt="Screenshot of MapLayers." style="zoom:50%;" />
     + **The paginator needs to be activated before entering drawing mode:** First activate the paginator switch on the toolbar; after entering drawing mode, the paginator will appear at the left edge of the screen.
     + **Paginator drag handle:** The paginator drag handle can collapse and expand the buttons by double-clicking; dragging and dropping the paginator to the left, top, or right edge of the screen will cause the paginator to snap to the screen edge.
     + **Changing the current page:** After enabling the overlay mode of the paginator, right-click or Ctrl-click an overlay page button to set it as the current page. The current page determines which page subsequent annotations on the canvas belong to. Once the current page is confirmed, all newly drawn annotation shapes will be saved to the data file of this current page.
@@ -43,3 +35,6 @@ Usage instructions for each drawing tool or feature can be accessed by clicking 
 14. **Saving or exporting annotation data:**
     + After entering drawing mode, if the paginator <img src="assets/e81e.png" alt="Screenshot of MapLayers." style="zoom:50%;" /> is not enabled, right-click the canvas and select `Save Annotations` to temporarily save the annotation shapes on the canvas; use `Load Annotations` next time to re-read and load them onto the canvas.
     + If the paginator <img src="assets/e81e.png" alt="Screenshot of MapLayers." style="zoom:50%;" /> is enabled, right-click the canvas and select `Save Paginator Annotations` to package all shape data from all pages of the canvas into a compressed file and save it to a location of your choice. Next time, you can use the `Load Paginator Annotations` command to reload them. However, note that reloading paginated annotations will overwrite existing paginated annotation data. If there are important annotations in the current data, it is recommended to package and export a backup first.
+
+[^macOS]: macOS
+[^win]: Windows OS

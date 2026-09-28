@@ -1,10 +1,6 @@
 ---
 title: 螢幕電子教鞭助手使用說明
 ---
-# 螢幕電子教鞭助手使用說明
-
-相關軟體：[螢幕電子教鞭](/zh-hant/epointer.html)、[螢幕電子教鞭助手](/zh-hant/epointer-assistant.html)
-
 ## 如何在螢幕電子教鞭中新增自訂圖示？
 
 ### 最簡易的步驟

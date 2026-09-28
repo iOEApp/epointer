@@ -1,7 +1,6 @@
 ---
-title: ePointer Paginator Usage Guide
+title: ePointer Paginator Help
 ---
-# ePointer Paginator Usage Guide
 ![epointer-paginator](assets/epointer-paginator.png)
 The paginator is displayed along the left edge of the screen and consists of 13 components from top to bottom: drag handle, page overlay switch, page title setting button, nine page buttons, and a help button at the bottom. The help button automatically hides after the help panel is opened once. If you need to access the help panel later, click the Page Label Setting Button; there is another help button inside the settings interface.
 
