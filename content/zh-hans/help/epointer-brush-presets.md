@@ -17,11 +17,11 @@ macOS版和Windows版在颜色定义上有一些细微差别。
 
 macOS版的工具栏颜色可自定义24个。工具栏默认显示12个颜色（第一页），按住option键后会显示另外12个颜色（第二页），您可以在预设界面重新定义这24个颜色。
 
-==（图）==
+![macos-toolbar-colors](assets/macos-toolbar-colors.png)
 
 点击色块后会弹出颜色选择对话框，可以通过点选或输入色值（如RGB、Hex等）来设置颜色。
 
-==（图）==
+![epointer-macos-morecolor-colorpicker](assets/macos-morecolor-colorpicker.png)
 
 ### Windows版
 
@@ -29,9 +29,9 @@ Windows版的工具栏颜色可自定义11个。Windows版简化了工具栏颜�
 
 ![epointer-windows-toolbar-colors](assets/windows-toolbar-colors.png)
 
-点击颜色会弹出颜色面板，点击【更多颜色】会弹出颜色选择对话框，可以通过点选或输入色值（如RGB、Hex等）来设置颜色。
+点击颜色会弹出颜色面板，点击【更多颜色】会弹出颜色选择对话框，可以通过点选或输入色值（如RGB、Hex等）来设置颜色；点击底部的`+`号按钮可以将当前颜色记录到历史颜色中。
 
-==（图）==
+![epointer-windows-morecolor-colorpicker](assets/windows-morecolor-colorpicker.png)
 
 ## 画笔预设
 
@@ -39,7 +39,7 @@ Windows版的工具栏颜色可自定义11个。Windows版简化了工具栏颜�
 
 ![epointer-preset-windows-version](assets/brush-presets.png)
 
-==mac图==
+![epointer-preset-macos-version](assets/macos-brush-presets.png)
 
 + 点击`+`号按钮新增一个预设画笔；点击`X`按钮删除表格中的所有预设。
 + **`名称`单元格：** 点击单元格可以修改预设的名称。
