@@ -7,6 +7,10 @@ title: 屏幕电子教鞭 ePointer 颜色和画笔预设帮助
 
 点击工具栏右下角的齿轮按钮，打开软件的【偏好设置 - 预设】界面，这里就可以定义工具栏上的画笔颜色和预设画笔。
 
+https://www.bilibili.com/video/BV1RDnH6gEfo/
+
+https://www.bilibili.com/video/BV1dDnH6gEMe/
+
 ## 工具栏颜色
 
 工具栏颜色指的是直接显示在工具栏颜色区的画笔颜色，我们可以在偏好设置中根据自己需要重新设置这些颜色。

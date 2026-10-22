@@ -8,8 +8,6 @@ reading_time: false
 description: 'Guides and answers for using ePointer.'
 ---
 
-## ePointer Help Documentation
-
 + [ePointer Usage tips](epointer-tips/)
 + [ePointer Paginator Help](epointer-paginator/)
 + [ePointer Brush Presets Help](epointer-brush-presets/)
